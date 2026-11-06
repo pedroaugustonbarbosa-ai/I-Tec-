@@ -1,0 +1,212 @@
+@charset "utf-8";
+@import url('https://googleapis.com');
+
+/* Reset Total para limpar o conflito do template antigo */
+#main *, #main *::before, #main *::after {
+    box-sizing: border-box !important;
+    margin: 0;
+    padding: 0;
+}
+
+/* Configurações da Página */
+body {
+    background: #ffffff !important;
+    color: #4a5156 !important;
+    font-family: "Open Sans", Helvetica, sans-serif !important;
+    font-size: 13pt !important;
+    line-height: 1.8 !important;
+}
+
+#main .inner {
+    max-width: 1100px !important;
+    margin: 0 auto !important;
+    padding: 3em 2em !important;
+}
+
+/* Cabeçalho e Títulos */
+#header {
+    border-bottom: solid 2px #f2f2f2 !important;
+    padding-bottom: 1.5em !important;
+    margin-bottom: 3.5em !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+}
+
+#header .logo {
+    color: #3d4449 !important;
+    font-size: 1.2em !important;
+    font-weight: 700 !important;
+    font-family: "Roboto Slab", Georgia, serif !important;
+    text-decoration: none !important;
+}
+
+#main h1 { 
+    font-family: "Roboto Slab", Georgia, serif !important;
+    font-size: 2.5em !important; 
+    color: #3d4449 !important;
+    line-height: 1.2 !important;
+    margin-bottom: 0.8em !important;
+}
+
+/* Estrutura de Slots e Novo Grid Isolado */
+.product-slot {
+    border-bottom: 2px dashed #e5e5e5 !important;
+    padding-bottom: 4em !important;
+    margin-bottom: 4em !important;
+    width: 100% !important;
+    display: block !important;
+}
+
+.product-slot:last-of-type {
+    border-bottom: none !important;
+    margin-bottom: 1em !important;
+}
+
+.product-slot h2 {
+    font-family: "Roboto Slab", Georgia, serif !important;
+    font-size: 1.9em !important;
+    color: #2b3033 !important;
+    border-left: 6px solid #f2849e !important;
+    padding-left: 15px !important;
+    margin-bottom: 1.2em !important;
+}
+
+/* O Segredo do Conserto: Flexbox Direto sem usar classes do template */
+.slot-container {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 3em !important;
+    width: 100% !important;
+}
+
+.slot-media {
+    flex: 1 !important;
+    width: 50% !important;
+}
+
+.slot-info {
+    flex: 1 !important;
+    width: 50% !important;
+}
+
+/* Imagens, Vídeos e Listas */
+.slot-media img {
+    width: 75% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    border-radius: 6px !important;
+    margin-bottom: 1.5em !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05) !important;
+}
+
+.embed-container {
+    position: relative !important;
+    padding-bottom: 56.25% !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    border-radius: 6px !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08) !important;
+    background: #000 !important;
+}
+
+.embed-container iframe {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    border: 0 !important;
+}
+
+.slot-info p {
+    margin-bottom: 1.5em !important;
+    color: #4a5156 !important;
+}
+
+.lists-flex {
+    display: flex !important;
+    gap: 1.5em !important;
+    margin-bottom: 2em !important;
+}
+
+.list-block {
+    flex: 1 !important;
+}
+
+.list-block h4 {
+    font-size: 1em !important;
+    margin-bottom: 0.5em !important;
+}
+
+.list-block ul {
+    list-style: none !important;
+}
+
+.list-block ul li {
+    position: relative !important;
+    padding-left: 1.5em !important;
+    margin-bottom: 0.5em !important;
+    font-size: 0.95em !important;
+}
+
+.pros-list li::before { content: "✓"; position: absolute; left: 0; color: #2ecc71; font-weight: bold; }
+.contras-list li::before { content: "✗"; position: absolute; left: 0; color: #e74c3c; font-weight: bold; }
+
+/* Botões de Afiliados */
+.affiliate-buttons {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)) !important;
+    gap: 10px !important;
+    margin-top: 1.5em !important;
+}
+
+.btn-affiliate {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    font-size: 0.75em !important;
+    letter-spacing: 0.5px !important;
+    height: 3.8em !important;
+    border-radius: 6px !important;
+    text-decoration: none !important;
+    border: none !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.btn-affiliate:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+}
+
+.btn-mercadolivre { background-color: #fff159 !important; color: #2d3277 !important; }
+.btn-amazon { background-color: #ff9900 !important; color: #ffffff !important; }
+.btn-aliexpress { background-color: #ff4747 !important; color: #ffffff !important; }
+
+.adsense-block { text-align: center !important; margin: 3em 0 !important; }
+
+/* Correção de Responsividade para Celular */
+@media screen and (max-width: 840px) {
+    #main .inner { padding: 1.5em 1em !important; }
+    #main h1 { font-size: 2em !important; }
+    
+    .slot-container {
+        flex-direction: column !important;
+        gap: 2em !important;
+    }
+    
+    .slot-media, .slot-info {
+        width: 100% !important;
+    }
+    
+    .lists-flex {
+        flex-direction: column !important;
+        gap: 1em !important;
+    }
+    
+    .affiliate-buttons {
+        grid-template-columns: 1fr !important;
+    }
+}
